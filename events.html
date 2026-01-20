@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Haven Bookstore - Events</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js"></script>
+  <title>Book Haven Bookstore - Events</title>
 </head>
 <body>
 <header>
@@ -15,19 +15,41 @@
     <a href="gallery.html">Gallery</a>
     <a href="about.html">About Us</a>
     <a href="events.html">Events</a>
+    <button type="button" onclick="openCart()">View Cart</button>
   </nav>
 </header>
 
 <main>
   <section>
     <h2>Upcoming Events</h2>
-    <p>Author Meet & Greet – June 15</p>
+    <p><strong>Author Meet &amp; Greet:</strong> June 15</p>
+    <p><strong>Book Club Night:</strong> July 10</p>
     <button type="button">Learn More</button>
+  </section>
+
+  <section>
+    <h3>Community Involvement</h3>
+    <p>We proudly support local schools, reading programs, and community literacy events.</p>
   </section>
 </main>
 
+<!-- View Cart Modal (reads items from sessionStorage) -->
+  <dialog id="cartModal" aria-labelledby="cartTitle">
+    <h2 id="cartTitle">Shopping Cart</h2>
+    <p id="cartEmptyMsg">Your cart is currently empty.</p>
+    <ol id="cartItemsList"></ol>
+
+    <div class="modal-actions">
+      <button type="button" onclick="clearCart()">Clear Cart</button>
+      <button type="button" onclick="processOrder()">Process Order</button>
+      <button type="button" onclick="closeCart()">Close</button>
+    </div>
+  </dialog>
+
 <footer>
-  <button onclick="subscribeAlert()">Subscribe</button>
+  <div class="footer-actions">
+    <button type="button" onclick="subscribeAlert()">Subscribe</button>
+  </div>
 </footer>
 </body>
 </html>
